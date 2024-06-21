@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Testimonial from './components/testimonials/Testimonial';
 
 export default function Home() {
   return (
@@ -52,43 +53,8 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="bg-gray-100 py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">"Personify improved my understanding of who I am. My self-awareness has significantly enhanced as a result of the spot-on observations"</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-cyan-200 rounded-full mr-4"></div>
-                  <div>
-                    <h4 className="font-semibold">Olumide A.</h4>
-                    <p className="text-sm text-gray-500">Marketing Specialist</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">"At first, I was doubtful, but the outcomes were remarkably precise. It has assisted me in choosing a better job path."</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-cyan-200 rounded-full mr-4"></div>
-                  <div>
-                    <h4 className="font-semibold">Isah N.</h4>
-                    <p className="text-sm text-gray-500">Operations Engineer</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">"Our company culture has completely changed as a result of the team compatibility test. Highly recommended!"</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-cyan-200 rounded-full mr-4"></div>
-                  <div>
-                    <h4 className="font-semibold">Ikechukwu M.</h4>
-                    <p className="text-sm text-gray-500">Senior HR Manager</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       
+        <Testimonial />
 
         {/* CTA Section */}
         <section className="bg-cyan-600 text-white py-20">
