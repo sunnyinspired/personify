@@ -1,15 +1,15 @@
 'use client'
-import SpinLoader from "@/app/components/SpinLoader";
+import SpinLoader from "@/app/components/spinners/SpinLoader";
 import Question from "@/app/components/questions/Question";
-import { getPersonality } from "@/utils/functions/personality";
+import { ScoreContext } from "@/utils/context/scoreContext";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 function TestQuestions() {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [scores, setScores] = useState([]);
+    const { scores, setScores } = useContext(ScoreContext)
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [loading, setLoading] = useState(false)
 
@@ -41,14 +41,21 @@ function TestQuestions() {
     };
 
     const handleNext = () =>{
-        if(currentQuestionIndex < questions.length - 1){
-            setCurrentQuestionIndex(currentQuestionIndex + 1)
-            
+        const currentQ = scores.find(s => s.questionID == currentQuestionIndex+1)
+        if(currentQ){
+            if(currentQuestionIndex < questions.length - 1){
+                setCurrentQuestionIndex(currentQuestionIndex + 1)
+            }
+            else{
+                //console.log(scores)
+                //const personality = btoa(getPersonality(scores));
+                router.push('/test-result')
+            }
         }
         else{
-            const personality = btoa(getPersonality(scores));
-            router.push(`/test-result?t=${personality}`)
+            alert("Please Select an Answer!")
         }
+
     }
 
     const handlePrevious = () =>{
@@ -84,7 +91,7 @@ function TestQuestions() {
     {
         loading && <SpinLoader />
     }
-    <div className="mx-auto my-12 py-16 lg:w-[60%] px-24 lg:px-12 bg-white shadow rounded">
+    <div className="mx-auto my-12 py-16 lg:w-[60%] px-8 lg:px-12 bg-white shadow rounded">
         {
             questions && 
             <>
