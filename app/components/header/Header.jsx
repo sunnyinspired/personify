@@ -14,7 +14,11 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-4xl font-[900] text-cyan-600 uppercase">Personify</div>
+          <div className="text-4xl font-[900] text-cyan-600 uppercase">
+            <Link href='/'>
+              Personify
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6 font-bold">

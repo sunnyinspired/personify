@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Testimonial from './components/testimonials/Testimonial';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,9 +13,10 @@ export default function Home() {
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Discover Your True Self</h1>
               <p className="text-xl mb-8">Our professionally validated tests can provide insights into your personality.</p>
-              <button className="bg-white text-cyan-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300">
+              <Link href="/tests" 
+                className="bg-white text-cyan-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300">
                 Take a Test
-              </button>
+              </Link>
             </div>
             <div className="md:w-1/2 p-0">
               <Image src="/images/ra2.png" 
@@ -61,9 +63,9 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Discover Your Personality?</h2>
             <p className="text-xl mb-8">Take our free personality test and gain valuable insights today.</p>
-            <button className="bg-white text-cyan-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+            <Link href="/tests"  className="bg-white text-cyan-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
               Start Free Test
-            </button>
+            </Link>
           </div>
         </section>
       </main>
