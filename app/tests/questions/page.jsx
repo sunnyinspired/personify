@@ -24,16 +24,26 @@ function TestQuestions() {
         })
     }
 
-    const handleAnswer = (score) =>{
+    const handleAnswer = (id, score) => {
         setSelectedAnswer(score);
-        setScores([...scores, score]);
-        console.log(scores)
-        
-    }
+        setScores(prevScores => {
+            const existingIndex = prevScores.findIndex(item => item.questionID === id);
+            if (existingIndex !== -1) {
+                // If the questionID already exists, update its answerValue
+                const updatedScores = [...prevScores];
+                updatedScores[existingIndex] = { ...updatedScores[existingIndex], answerValue: score };
+                return updatedScores;
+            } else {
+                // If it's a new questionID, add it to the array
+                return [...prevScores, { questionID: id, answerValue: score }];
+            }
+        });
+    };
 
     const handleNext = () =>{
         if(currentQuestionIndex < questions.length - 1){
             setCurrentQuestionIndex(currentQuestionIndex + 1)
+            
         }
         else{
             const personality = btoa(getPersonality(scores));
@@ -44,19 +54,31 @@ function TestQuestions() {
     const handlePrevious = () =>{
         if(currentQuestionIndex > 0){
 
-            setCurrentQuestionIndex(currentQuestionIndex - 1)
+            setCurrentQuestionIndex(currentQuestionIndex - 1);
+           
         }
+        
     }
 
     useEffect(() =>{
         getQuestions()
     },[])
 
-    // useEffect(() => {
-    //     // Reset selected answer when moving to a new question
-    //     setSelectedAnswer(null);
-    //   }, [currentQuestionIndex]);
+    useEffect(() => {
+        //setSelectedAnswer(null);
+        const currentQ = scores.find(s => s.questionID == currentQuestionIndex + 1)
+            if(currentQ){
+                setSelectedAnswer(currentQ.answerValue)
+            }
+            else{
+
+                setSelectedAnswer(null);
+            }
+      }, [currentQuestionIndex]);
     
+    useEffect(() =>{
+        console.log(scores)
+    }, [scores])
   return (
     <>
     {

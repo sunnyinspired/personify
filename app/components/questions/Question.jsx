@@ -12,7 +12,7 @@ export default function Question({ question, selectedAnswer, onAnswer }) {
                 name={`question-${question?.id}`}
                 value={answer?.score}
                 checked={selectedAnswer === answer.score}
-                onChange={() => onAnswer(answer.score)}
+                onChange={() => onAnswer(question.id, answer.score)}
                 className="sr-only"
               />
               <span
