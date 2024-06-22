@@ -26,9 +26,12 @@ function TestQuestions() {
 
     const handleAnswer = (score) =>{
         setSelectedAnswer(score);
-        const newScores = [...scores];
-        newScores[currentQuestionIndex] = score;
-        setScores(newScores);
+        setScores([...scores, score]);
+        console.log(scores)
+        
+    }
+
+    const handleNext = () =>{
         if(currentQuestionIndex < questions.length - 1){
             setCurrentQuestionIndex(currentQuestionIndex + 1)
         }
@@ -38,31 +41,54 @@ function TestQuestions() {
         }
     }
 
+    const handlePrevious = () =>{
+        if(currentQuestionIndex > 0){
+
+            setCurrentQuestionIndex(currentQuestionIndex - 1)
+        }
+    }
+
     useEffect(() =>{
         getQuestions()
     },[])
 
-    useEffect(() => {
-        // Reset selected answer when moving to a new question
-        setSelectedAnswer(null);
-      }, [currentQuestionIndex]);
+    // useEffect(() => {
+    //     // Reset selected answer when moving to a new question
+    //     setSelectedAnswer(null);
+    //   }, [currentQuestionIndex]);
     
   return (
     <>
     {
         loading && <SpinLoader />
     }
-    <div className="mx-auto py-16 lg:w-[60%]">
+    <div className="mx-auto my-12 py-16 lg:w-[60%] px-24 lg:px-12 bg-white shadow rounded">
         {
             questions && 
             <>
-            <h1 className="text-3xl font-bold mb-8">Question {currentQuestionIndex + 1}</h1>
+            <h1 className="text-2xl font-bold mb-8">Question {currentQuestionIndex + 1}</h1>
             <Question question={questions[currentQuestionIndex]} 
-                onAnswer={handleAnswer}
-                selectedAnswer={selectedAnswer} 
+                selectedAnswer={selectedAnswer}
+                onAnswer={handleAnswer} 
             />
-            <div className="mt-4 text-gray-600">
-            Question {currentQuestionIndex + 1} of {questions.length}
+            <div className=" text-gray-600 flex justify-between items-center">
+               
+                <button 
+                     className={`${currentQuestionIndex > 0 ?'bg-cyan-600 hover:bg-cyan-500' : 'bg-gray-400'} px-5 py-2 text-white font-semibold rounded shadow-md `}
+                    onClick={handlePrevious}
+                >
+                    Previous
+                </button>
+                <p>Question {currentQuestionIndex + 1} of {questions.length}</p>
+                <button 
+                    className={`${currentQuestionIndex == questions.length -1 ? 'bg-red-600 hover:bg-red-500' : 'bg-cyan-600 hover:bg-cyan-500'} 
+                        px-5 py-2 text-white font-semibold rounded shadow-md`}
+                    onClick={handleNext}
+                >
+                    {
+                        currentQuestionIndex == questions.length -1 ? 'Finish' : 'Next'
+                    }
+                </button>
             </div>
 
             </>
