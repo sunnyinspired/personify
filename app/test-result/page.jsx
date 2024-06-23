@@ -29,7 +29,7 @@ function TestResult() {
         validateScores();
         const timeoutId = setTimeout(() => {
             setLoading(false);
-          }, 5000);
+          }, 3000);
     
           return () => clearTimeout(timeoutId); 
         
@@ -63,7 +63,9 @@ function TestResult() {
                         <div className="my-4 text-justify">
                             <p className="font-bold py-2">A Quick Review</p>
                             <p className="py-4">
-                                Introversion refers to the tendency to focus more on inner experiences–such as your own feelings and thoughts–than outer ones. Introverts are typically more intrinsically motivated, self-reliant, guarded, and introspective than extroverts. Some may be shy and socially anxious. Others simply prefer spending time alone. 
+                                Introversion refers to the tendency to focus more on inner experiences–such as your own feelings and thoughts–than outer ones. 
+                                Introverts are typically more intrinsically motivated, self-reliant, guarded, and introspective than extroverts. 
+                                Some may be shy and socially anxious. Others simply prefer spending time alone. 
                             </p>
                             <p>
                                 Some of the benefits of introversion include greater self-sufficiency, self-awareness, and focus, as well as lower impulsivity and a tendency to build high-quality, trusting relationships. 
@@ -85,10 +87,17 @@ function TestResult() {
                                 Extroverts tend to be outgoing, talkative, action-oriented, spontaneous, energetic, and optimistic. They often thrive in a crowd and are more interested in the outer world than in reflecting on their inner experiences.
                             </p>
                             <p>
-                                Extroverts tend to thrive in social situations and gain energy from interacting with others. They often excel at communication, networking, and building relationships. Extroverts are typically comfortable taking on leadership roles, public speaking, and engaging in group activities. They can quickly adapt to new environments and find it easy to make new friends. Extroverts' outgoing nature and enthusiasm can be infectious, allowing them to inspire and motivate those around them.
+                                Extroverts tend to thrive in social situations and gain energy from interacting with others. 
+                                They often excel at communication, networking, and building relationships. 
+                                Extroverts are typically comfortable taking on leadership roles, public speaking, and engaging in group activities. 
+                                They can quickly adapt to new environments and find it easy to make new friends. 
+                                Extroverts are outgoing nature and enthusiasm can be infectious, allowing them to inspire and motivate those around them.
                             </p>
                             <p className="py-4">
-                            While extroverts enjoy social interaction, they may sometimes struggle with tasks that require deep focus and concentration. Extroverts can become overstimulated in highly stimulating environments, making it difficult for them to maintain their attention on a single task for an extended period. Additionally, extroverts may have a tendency to talk more than they listen, which can lead to misunderstandings or conflicts if they do not actively work on improving their listening skills. Extroverts may also find it challenging to recharge and find solitude, as they often prefer being around others.
+                                While extroverts enjoy social interaction, they may sometimes struggle with tasks that require deep focus and concentration. 
+                                Extroverts can become overstimulated in highly stimulating environments, making it difficult for them to maintain their attention on a single task for an extended period. 
+                                Additionally, extroverts may have a tendency to talk more than they listen, which can lead to misunderstandings or conflicts if they do not actively work on improving their listening skills. 
+                                Extroverts may also find it challenging to recharge and find solitude, as they often prefer being around others.
                             </p>
                             <p>
                                 <Link href="https://www.health.com/extroverted-7967128" target="_blank">

@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Personify Project**: 
+A mock Self-Discovery App Built with Next.js & Tailwind CSS
+Personify is a Next.js web application designed to guide users on a path of self-discovery through scientifically-backed personality assessments. It utilizes Tailwind CSS for a clean and responsive user interface.
 
-## Getting Started
+**Tech Stack:**
 
-First, run the development server:
+Frontend: Next.js (React Framework)
+Styling: Tailwind CSS
 
+**Project Set up:**
+To setup the project, first clone the repo:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sunnyinspired/personify.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then install dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
+(or for Yarn users)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```Bash
+yarn install
+```
 
-## Learn More
+Run Development Server:
 
-To learn more about Next.js, take a look at the following resources:
+```Bash
+npm run dev
+```
+(or)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+``` Bash
+yarn dev
+```
+This will start the development server, typically accessible at http://localhost:3000 by default.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Additional Notes:**
 
-## Deploy on Vercel
+Refer to the package.json file for available scripts (e.g., build, test).
+For production deployment, follow the instructions in the deployment.md file (if present).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Further Development:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ You'll find the codebase well-structured for further development and customization. Feel free to explore the components, pages, and API integrations (if applicable) for a deeper understanding of Personify's functionality.

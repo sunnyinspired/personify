@@ -83,9 +83,7 @@ function TestQuestions() {
             }
       }, [currentQuestionIndex]);
     
-    useEffect(() =>{
-        console.log(scores)
-    }, [scores])
+
   return (
     <>
     {

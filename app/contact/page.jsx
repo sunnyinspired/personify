@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="p-8">
             <p className="text-lg text-gray-700 mb-6">
-              We'd love to hear from you! Whether you have a question about our personality tests, need technical support, or want to explore collaboration opportunities, our team is here to help.
+              We&apos;d love to hear from you! Whether you have a question about our personality tests, need technical support, or want to explore collaboration opportunities, our team is here to help.
             </p>
             
             <div className="space-y-4 mb-8">
