@@ -15,6 +15,7 @@ function TestQuestions() {
 
     const router = useRouter()
 
+    //get the questions from the API
     const getQuestions = () =>{
         setLoading(true)
         axios.get('/api/questions')
@@ -24,6 +25,7 @@ function TestQuestions() {
         })
     }
 
+    //checks if a question has been answered, updates the answer, else insert a new questionID and Score
     const handleAnswer = (id, score) => {
         setSelectedAnswer(score);
         setScores(prevScores => {
@@ -40,9 +42,12 @@ function TestQuestions() {
         });
     };
 
+    
     const handleNext = () =>{
+        //checks if the current question has been answered
         const currentQ = scores.find(s => s.questionID == currentQuestionIndex+1)
         if(currentQ){
+            //checks if it is the last question, move to the result page, else move to next question
             if(currentQuestionIndex < questions.length - 1){
                 setCurrentQuestionIndex(currentQuestionIndex + 1)
             }
@@ -58,6 +63,7 @@ function TestQuestions() {
 
     }
 
+    //checks if on  current question is the first, else, go to previous question
     const handlePrevious = () =>{
         if(currentQuestionIndex > 0){
 
@@ -72,7 +78,9 @@ function TestQuestions() {
     },[])
 
     useEffect(() => {
-        //setSelectedAnswer(null);
+        
+        //checks if current question has been answered and set the selected answer to it's answer
+        //else set selected answer to NULL
         const currentQ = scores.find(s => s.questionID == currentQuestionIndex + 1)
             if(currentQ){
                 setSelectedAnswer(currentQ.answerValue)

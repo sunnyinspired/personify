@@ -5,9 +5,10 @@ import { useContext, useEffect } from "react"
 
 
 function Test() {
-    const { scores, setScores } = useContext(ScoreContext)
+    const { setScores } = useContext(ScoreContext)
 
     useEffect(() =>{
+        //resets score to empty array one this page loads
         setScores([])
     }, [])
   return (
