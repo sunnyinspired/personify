@@ -19,7 +19,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="md:w-1/2 p-0">
-              <Image src="/images/ra2.png" 
+              <Image src="/images/personality.png" 
                 alt="Personality Illustration" 
                 width={600} 
                 height={400} 
