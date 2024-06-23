@@ -28,7 +28,7 @@ function Testimonial() {
             <p className="text-gray-600 mb-4">{item.thoughts}</p>
             <div className="flex items-center">
                 <div className="w-12 h-12 bg-cyan-500 rounded-full mr-4 flex items-center justify-center">
-                  <FaUser className='text-white text-xl' />
+                  <FaUser className='text-white text-2xl' />
                 </div>
                 
                 <div>

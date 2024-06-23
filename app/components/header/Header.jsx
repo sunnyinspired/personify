@@ -9,6 +9,10 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
@@ -59,10 +63,10 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden pb-4">
-            <Link href="/"className="block py-2 text-gray-600 hover:text-cyan-600">Home</Link>
-            <Link href="/tests"className="block py-2 text-gray-600 hover:text-cyan-600">Tests</Link>
-            <Link href="/about"className="block py-2 text-gray-600 hover:text-cyan-600">About</Link>
-            <Link href="/contact"className="block py-2 text-gray-600 hover:text-cyan-600">Contact</Link>
+            <Link href="/"className="block py-2 text-gray-600 hover:text-cyan-600" onClick={closeMenu}>Home</Link>
+            <Link href="/tests"className="block py-2 text-gray-600 hover:text-cyan-600" onClick={closeMenu}>Tests</Link>
+            <Link href="/about"className="block py-2 text-gray-600 hover:text-cyan-600" onClick={closeMenu}>About</Link>
+            <Link href="/contact"className="block py-2 text-gray-600 hover:text-cyan-600" onClick={closeMenu}>Contact</Link>
           </nav>
         )}
       </div>
