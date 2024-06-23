@@ -103,7 +103,7 @@ function TestQuestions() {
             <div className=" text-gray-600 flex justify-between items-center">
                
                 <button 
-                     className={`${currentQuestionIndex > 0 ?'bg-cyan-600 hover:bg-cyan-500' : 'bg-gray-400'} px-5 py-2 text-white font-semibold rounded shadow-md `}
+                     className={`${currentQuestionIndex > 0 ?'bg-cyan-600 hover:bg-cyan-500' : 'bg-gray-400 cursor-not-allowed'} px-5 py-2 text-white font-semibold rounded shadow-md `}
                     onClick={handlePrevious}
                 >
                     Previous

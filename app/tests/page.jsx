@@ -1,8 +1,15 @@
+'use client'
+import { ScoreContext } from "@/utils/context/scoreContext"
 import Link from "next/link"
+import { useContext, useEffect } from "react"
 
 
 function Test() {
-    
+    const { scores, setScores } = useContext(ScoreContext)
+
+    useEffect(() =>{
+        setScores([])
+    }, [])
   return (
     <div className="text-center py-32 px-3">
         <h1 className="text-4xl font-bold mb-8">Personality Test</h1>
