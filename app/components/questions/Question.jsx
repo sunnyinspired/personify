@@ -3,7 +3,7 @@
 export default function Question({ question, selectedAnswer, onAnswer }) {
     return (
       <div className="mb-4">
-        <h2 className="text-xl font-semibold mb-4 ">{question?.text}</h2>
+        <h2 className="text-xl font-semibold mb-4 text-black">{question?.text}</h2>
         <div className="space-y-2">
           {question?.answers.map((answer, index) => (
             <label key={index} className="block">
